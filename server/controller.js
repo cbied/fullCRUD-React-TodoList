@@ -36,9 +36,18 @@ const deleteTodo = (req,res) => {
         .catch(error => res.status(500).send(`C-deleteTodos: ${error}`))
 }
 
+const deleteAll = (req,res) => {
+    const db = req.app.get('db')
+
+    db.deleteAllTodo()
+        .then(() => res.sendStatus(200))
+        .catch(error => res.status(500).send(`C-deleteAllTodos: ${error}`))
+}
+
 module.exports = {
     addTodo,
     getTodo,
     editTodo,
-    deleteTodo
+    deleteTodo,
+    deleteAll
 }

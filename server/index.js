@@ -17,8 +17,9 @@ app.use(express.json())
 
 app.post(path, controller.addTodo)
 app.get(path, controller.getTodo)
-app.put(`${path}/:id`, controller.editTodo)
+app.put(path, controller.editTodo)
 app.delete(`${path}/:id`, controller.deleteTodo)
+app.delete(path, controller.deleteAll)
 
 app.listen(SERVER_PORT, () => {
     console.log(`${SERVER_PORT} is listening`)
