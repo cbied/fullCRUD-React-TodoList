@@ -4,6 +4,10 @@
   color: #61dafb;
 } */
 
+body {
+  background-color: rgba(0, 123, 255, .4)
+}
+
 /* Header Component */
 
 .navLinks {
@@ -21,17 +25,45 @@
   font-size: 1.5rem;
 }
 
+.btn-outline-primary {
+  color: whitesmoke;
+}
+
 .link:hover {
   color: gainsboro;
   text-decoration: none;
+}
+
+/* MainDisplay Component */
+
+.mainDisplay {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.mainDisplay h1 {
+  margin: 1.5rem 0 2rem 0;
 }
 
 /* inputTodo Component */
 
 .inputTodo {
   width: 40vw;
-  margin: 1rem auto 0 auto;
+  height: 6vh;
+  /* margin: 1rem auto 0 auto; */
 }
+
+
+.inputTodo img:hover {
+  color: white
+}
+
+.input {
+  height: 9vh;
+}
+
 
 /* Footer Component */
 

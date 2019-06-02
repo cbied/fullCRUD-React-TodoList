@@ -6,15 +6,15 @@ const addTodo = (req,res) => {
 
 
     db.addTodo( description, completed )
-        .then(response => res.status(200).send(response))
+        .then(response => res.status(200).json(response))
         .catch(error => res.status(500).send(`C-addTodo: ${error}`))
 }
 
 const getTodo = (req,res) => {
-    const db = req.app.get('db')
+    const db = req.app.get('db');
 
     db.getTodos()
-        .then(response => res.status(200).send(response))
+        .then(response => res.status(200).json(response))
         .catch(error => res.status(500).send(`C-getTodos: ${error}`))
 }
 
@@ -23,7 +23,7 @@ const editTodo = (req,res) => {
         { todo_id, description, completed } = req.body;
 
     db.editTodo( todo_id, description, completed )
-        .then(response => res.status(200).send(response))
+        .then(response => res.status(200).json(response))
         .catch(error => res.status(500).send(`C-editTodos: ${error}`))
 }
 
